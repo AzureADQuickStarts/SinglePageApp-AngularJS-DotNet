@@ -106,8 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\Scripts\adal-angular.js" />
-    <Content Include="App\Scripts\adal.js" />
     <Content Include="App\Scripts\app.js" />
     <Content Include="App\Scripts\homeCtrl.js" />
     <Content Include="App\Scripts\indexCtrl.js" />

@@ -1,6 +1,8 @@
 ﻿'use strict';
-angular.module('todoApp', ['ngRoute','AdalAngular'])
-.config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', function ($routeProvider, $httpProvider, adalProvider) {
+
+// TODO: Add the adal.js module to the application
+angular.module('todoApp', ['ngRoute'])
+.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
     $routeProvider.when("/Home", {
         controller: "homeCtrl",
@@ -8,21 +10,15 @@ angular.module('todoApp', ['ngRoute','AdalAngular'])
     }).when("/TodoList", {
         controller: "todoListCtrl",
         templateUrl: "/App/Views/TodoList.html",
-        requireADLogin: true,
+        
+        // TODO: Require that the user sign in before accessing the TodoList controller.
+
     }).when("/UserData", {
         controller: "userDataCtrl",
         templateUrl: "/App/Views/UserData.html",
     }).otherwise({ redirectTo: "/Home" });
 
-    adalProvider.init(
-        {
-            instance: 'https://login.microsoftonline.com/', 
-            tenant: 'Enter your tenant name here e.g. contoso.onmicrosoft.com',
-            clientId: 'Enter your client ID here e.g. e9a5a8b6-8af7-4719-9821-0deef255f68e',
-            extraQueryParameter: 'nux=1',
-            //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
-        },
-        $httpProvider
-        );
+
+    // TODO: Initialize the adalProvider
    
 }]);

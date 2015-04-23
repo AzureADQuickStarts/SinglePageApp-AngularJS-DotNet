@@ -2,10 +2,14 @@
 angular.module('todoApp')
 .controller('homeCtrl', ['$scope', 'adalAuthenticationService','$location', function ($scope, adalService, $location) {
     $scope.login = function () {
-        adalService.login();
+        
+        // TODO: Sign the user in when the Login button is clicked.
+
     };
     $scope.logout = function () {
-        adalService.logOut();
+
+        // TODO: Sign the user out when the Logout button is clicked.
+
     };
     $scope.isActive = function (viewLocation) {        
         return viewLocation === $location.path();
